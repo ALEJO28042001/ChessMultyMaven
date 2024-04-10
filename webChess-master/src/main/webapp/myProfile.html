@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .action-button {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .action-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="welcome-heading">Welcome</h1>
+        <a href="/NewGame" class="action-button">New Game</a>
+        <a href="/chess.html" class="action-button">Logout</a>
+        <a href="/Games" class="action-button">Games</a>
+        <a href="/EnterGame" class="action-button">Enter Game</a>
+    </div>
+    
+    
+    <script>
+        // Function to retrieve the value of a cookie by its name
+        function getCookie(name) {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.startsWith(name + '=')) {
+                    return cookie.substring(name.length + 1);
+                }
+            }
+            return null;
+        }
+
+        // Retrieve the token and name from cookies
+        const token = getCookie('token');
+        const name = getCookie('name');
+
+    </script>
+    
+    <script>
+    
+        var welcomeHeading = document.getElementById("welcome-heading");
+        welcomeHeading.innerText += ", " + name;
+    </script>
+    
+</body>
+</html>
